@@ -1,0 +1,30 @@
+@import url(~antd/dist/antd.css);
+body {
+  font-size: 14px;
+  font-family: Microsoft JhengHei, Arial, Helvetica, sans-serif;
+}
+.mainWrap {
+  margin: 10px 30px;
+}
+.all-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.all-container main {
+  flex-grow: 1;
+}
+.all-container footer {
+  background: #080738;
+  color: #fff;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+.all-container footer a {
+  margin-left: 10px;
+}
+.title {
+  font-size: 20px;
+  margin: 10px 20px;
+}

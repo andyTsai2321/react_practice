@@ -1,0 +1,12 @@
+.folder {
+  color: blue;
+  cursor: pointer;
+  &:before {
+    content: "📁";
+  }
+  &.open {
+    &:before {
+      content: "📂";
+    }
+  }
+}
