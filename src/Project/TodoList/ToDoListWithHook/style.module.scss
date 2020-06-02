@@ -1,0 +1,17 @@
+
+.todoWrap{
+    width: 300px;
+    .formWrap{
+        display: flex;
+    }
+    .inputBox{
+        margin-right: 5px;
+        width: 100%;
+    }
+    .delBtn{
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+}

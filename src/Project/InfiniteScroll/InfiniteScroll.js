@@ -27,7 +27,6 @@ class InfiniteScroll extends Component {
       window.scrollY + window.innerHeight >=
       document.body.scrollHeight - 100
     ) {
-      console.log(next);
       this.fetchData(next);
     }
   };
@@ -39,7 +38,6 @@ class InfiniteScroll extends Component {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           //舊+新
           courses: [...this.state.courses, ...data.data],

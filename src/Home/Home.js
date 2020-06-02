@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  IndexRoute,
+} from "react-router-dom";
 
 import style from "./Home.css";
 import { Menu } from "antd";
@@ -14,29 +20,40 @@ import InfiniteScroll from "../Project/InfiniteScroll/InfiniteScroll";
 import FileNode from "../Project/FileNode/FileNode";
 import file from "../Project/FileNode/file.json";
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      current: "TodoList",
+    };
+  }
+  handleClick = (e) => {
+    this.setState({
+      current: e.key,
+    });
+  };
   render() {
     return (
       <div className="all-container">
         <Router>
           <main>
             <div className="title">React學習之路 - 練手小項目集合</div>
-            <Menu mode="horizontal">
-              <Menu.Item>
+            <Menu mode="horizontal" onClick={this.handleClick}>
+              <Menu.Item key="TodoList">
                 <Link to="/TodoList">TodoList</Link>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="ListFilter">
                 <Link to="/ListFilter">列表過濾</Link>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="TicTacToeGame">
                 <Link to="/TicTacToeGame">井字遊戲</Link>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="Checkbox">
                 <Link to="/Checkbox">Checkbox</Link>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="FileNode">
                 <Link to="/FileNode">檔案樹</Link>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="InfiniteScroll">
                 <Link to="/InfiniteScroll">無限滾動</Link>
               </Menu.Item>
             </Menu>
@@ -66,12 +83,7 @@ class Home extends Component {
               </Switch>
             </div>
           </main>
-          <footer>
-            Andy Tsai{" "}
-            <a href="#" target="_blank">
-              Souce Code
-            </a>
-          </footer>
+          <footer>Andy Tsai </footer>
         </Router>
       </div>
     );

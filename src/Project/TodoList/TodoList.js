@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Tabs } from "antd";
 import TodoListNormal from "./ToDoListeNormal/TodoListNormal";
+import TodoListHook from "./ToDoListWithHook/TodoListHook";
 import TodoListWithRedux from "./TodoListWithRedux/TodoList";
 const { TabPane } = Tabs;
 class TodoList extends Component {
@@ -13,6 +14,9 @@ class TodoList extends Component {
         </TabPane>
         <TabPane tab="使用Redux" key="2">
           <TodoListWithRedux/>
+        </TabPane>
+        <TabPane tab="使用Hook" key="3">
+          <TodoListHook/>
         </TabPane>
       </Tabs>
     );

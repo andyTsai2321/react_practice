@@ -12,7 +12,6 @@ const defaultState = {
 //state是上一次的數據，action是傳過來的東西
 //reducer可以接受state，但不能改變state
 export default (state = defaultState, action) => {
-  console.log(state, action);
   if (action.type === CHANGE_INPUT_VALUE) {
     const newState = JSON.parse(JSON.stringify(state));
     newState.inputValue = action.value;

@@ -76,7 +76,6 @@ class TicTacToeGame extends Component {
   };
 
   jumpTo(step) {
-    console.log(step);
     this.setState({
       stepNumber: step,
       player: step % 2 === 0 ? 1 : -1,
